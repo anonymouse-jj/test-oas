@@ -1,0 +1,1069 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "FastAPI",
+        "version": "0.1.0"
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Root",
+                "operationId": "root__get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "Azure_AD_PKCE_Single_Tenant": []
+                    }
+                ]
+            }
+        },
+        "/projects/{project_id}/programs": {
+            "get": {
+                "tags": [
+                    "programs",
+                    "programs"
+                ],
+                "summary": "Get Programs",
+                "operationId": "get_programs_projects__project_id__programs_get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Project Id",
+                            "type": "integer"
+                        },
+                        "name": "project_id",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Response Get Programs Projects  Project Id  Programs Get",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProgramSchema"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "programs",
+                    "programs"
+                ],
+                "summary": "Add New Program Details",
+                "operationId": "add_new_program_details_projects__project_id__programs_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Project Id",
+                            "type": "integer"
+                        },
+                        "name": "project_id",
+                        "in": "path"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProgramAddSchema"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProgramAddSchema"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/projects/{project_id}/suppliers": {
+            "get": {
+                "tags": [
+                    "programs",
+                    "suppliers"
+                ],
+                "summary": "Get Suppliers",
+                "operationId": "get_suppliers_projects__project_id__suppliers_get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Project Id",
+                            "type": "integer"
+                        },
+                        "name": "project_id",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Response Get Suppliers Projects  Project Id  Suppliers Get",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/SupplierSchema"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "programs",
+                    "suppliers"
+                ],
+                "summary": "Add New Supplier Details",
+                "operationId": "add_new_supplier_details_projects__project_id__suppliers_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Project Id",
+                            "type": "integer"
+                        },
+                        "name": "project_id",
+                        "in": "path"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SupplierAddSchema"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SupplierAddSchema"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/projects/{project_id}/brands": {
+            "get": {
+                "tags": [
+                    "programs",
+                    "brands"
+                ],
+                "summary": "Get Brands",
+                "operationId": "get_brands_projects__project_id__brands_get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Project Id",
+                            "type": "integer"
+                        },
+                        "name": "project_id",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Response Get Brands Projects  Project Id  Brands Get",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/BrandSchema"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "programs",
+                    "brands"
+                ],
+                "summary": "Add New Brand Details",
+                "operationId": "add_new_brand_details_projects__project_id__brands_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Project Id",
+                            "type": "integer"
+                        },
+                        "name": "project_id",
+                        "in": "path"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BrandAddSchema"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/BrandAddSchema"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/projects/{project_id}/location_labels": {
+            "get": {
+                "tags": [
+                    "programs",
+                    "locations"
+                ],
+                "summary": "Get Location Labels",
+                "operationId": "get_location_labels_projects__project_id__location_labels_get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Project Id",
+                            "type": "integer"
+                        },
+                        "name": "project_id",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Response Get Location Labels Projects  Project Id  Location Labels Get",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LocationLabelSchema"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "programs",
+                    "locations"
+                ],
+                "summary": "Add Location Label Details",
+                "operationId": "add_location_label_details_projects__project_id__location_labels_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Project Id",
+                            "type": "integer"
+                        },
+                        "name": "project_id",
+                        "in": "path"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LocationLabelAddSchema"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/LocationLabelSchema"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/projects/{project_id}/products_labels": {
+            "get": {
+                "tags": [
+                    "programs",
+                    "products"
+                ],
+                "summary": "Get Product Labels",
+                "operationId": "get_product_labels_projects__project_id__products_labels_get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Project Id",
+                            "type": "integer"
+                        },
+                        "name": "project_id",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Response Get Product Labels Projects  Project Id  Products Labels Get",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProductLabelSchema"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "programs",
+                    "products"
+                ],
+                "summary": "Add Product Label Details",
+                "operationId": "add_product_label_details_projects__project_id__products_labels_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Project Id",
+                            "type": "integer"
+                        },
+                        "name": "project_id",
+                        "in": "path"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductLabelAddSchema"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProductLabelSchema"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/locations/": {
+            "get": {
+                "tags": [
+                    "locations"
+                ],
+                "summary": "Get Locations",
+                "operationId": "get_locations_locations__get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Project Id",
+                            "type": "integer"
+                        },
+                        "name": "project_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Response Get Locations Locations  Get",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/LocationSchema"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/products/": {
+            "get": {
+                "tags": [
+                    "products"
+                ],
+                "summary": "Get Products",
+                "operationId": "get_products_products__get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Project Id",
+                            "type": "integer"
+                        },
+                        "name": "project_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Response Get Products Products  Get",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProductSchema"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/": {
+            "get": {
+                "tags": [
+                    "users"
+                ],
+                "summary": "Get Users",
+                "operationId": "get_users_users__get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Response Get Users Users  Get",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/UserReadSchema"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "BrandAddSchema": {
+                "title": "BrandAddSchema",
+                "required": [
+                    "supplier_id",
+                    "name",
+                    "project_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "supplier_id": {
+                        "title": "Supplier Id",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "title": "Name",
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "integer"
+                    }
+                }
+            },
+            "BrandSchema": {
+                "title": "BrandSchema",
+                "required": [
+                    "id",
+                    "supplier_id",
+                    "name",
+                    "active_flag",
+                    "project_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "title": "Id",
+                        "type": "integer"
+                    },
+                    "supplier_id": {
+                        "title": "Supplier Id",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "title": "Name",
+                        "type": "string"
+                    },
+                    "active_flag": {
+                        "title": "Active Flag",
+                        "type": "boolean"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "integer"
+                    }
+                }
+            },
+            "HTTPValidationError": {
+                "title": "HTTPValidationError",
+                "type": "object",
+                "properties": {
+                    "detail": {
+                        "title": "Detail",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        }
+                    }
+                }
+            },
+            "LocationLabelAddSchema": {
+                "title": "LocationLabelAddSchema",
+                "required": [
+                    "name",
+                    "project_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "title": "Name",
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "integer"
+                    }
+                }
+            },
+            "LocationLabelSchema": {
+                "title": "LocationLabelSchema",
+                "required": [
+                    "id",
+                    "name",
+                    "active_flag",
+                    "project_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "title": "Id",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "title": "Name",
+                        "type": "string"
+                    },
+                    "active_flag": {
+                        "title": "Active Flag",
+                        "type": "boolean"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "integer"
+                    }
+                }
+            },
+            "LocationSchema": {
+                "title": "LocationSchema",
+                "required": [
+                    "fts_store_id",
+                    "store_name",
+                    "active_flag",
+                    "project_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "fts_store_id": {
+                        "title": "Fts Store Id",
+                        "type": "integer"
+                    },
+                    "store_name": {
+                        "title": "Store Name",
+                        "type": "string"
+                    },
+                    "address": {
+                        "title": "Address",
+                        "type": "string"
+                    },
+                    "city": {
+                        "title": "City",
+                        "type": "string"
+                    },
+                    "state": {
+                        "title": "State",
+                        "type": "string"
+                    },
+                    "active_flag": {
+                        "title": "Active Flag",
+                        "type": "boolean"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ProductLabelAddSchema": {
+                "title": "ProductLabelAddSchema",
+                "required": [
+                    "name",
+                    "project_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "title": "Name",
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ProductLabelSchema": {
+                "title": "ProductLabelSchema",
+                "required": [
+                    "id",
+                    "name",
+                    "active_flag",
+                    "project_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "title": "Id",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "title": "Name",
+                        "type": "string"
+                    },
+                    "active_flag": {
+                        "title": "Active Flag",
+                        "type": "boolean"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ProductSchema": {
+                "title": "ProductSchema",
+                "required": [
+                    "id",
+                    "name",
+                    "active_flag",
+                    "project_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "title": "Id",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "title": "Name",
+                        "type": "string"
+                    },
+                    "active_flag": {
+                        "title": "Active Flag",
+                        "type": "boolean"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ProgramAddSchema": {
+                "title": "ProgramAddSchema",
+                "required": [
+                    "name",
+                    "has_optional",
+                    "project_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "title": "Name",
+                        "type": "string"
+                    },
+                    "description": {
+                        "title": "Description",
+                        "type": "string"
+                    },
+                    "start_date": {
+                        "title": "Start Date",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "end_date": {
+                        "title": "End Date",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "has_optional": {
+                        "title": "Has Optional",
+                        "type": "boolean"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ProgramSchema": {
+                "title": "ProgramSchema",
+                "required": [
+                    "id",
+                    "name",
+                    "has_optional",
+                    "active_flag",
+                    "project_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "title": "Id",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "title": "Name",
+                        "type": "string"
+                    },
+                    "description": {
+                        "title": "Description",
+                        "type": "string"
+                    },
+                    "start_date": {
+                        "title": "Start Date",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "end_date": {
+                        "title": "End Date",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "has_optional": {
+                        "title": "Has Optional",
+                        "type": "boolean"
+                    },
+                    "active_flag": {
+                        "title": "Active Flag",
+                        "type": "boolean"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "integer"
+                    }
+                }
+            },
+            "SupplierAddSchema": {
+                "title": "SupplierAddSchema",
+                "required": [
+                    "name",
+                    "project_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "title": "Name",
+                        "type": "string"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "integer"
+                    }
+                }
+            },
+            "SupplierSchema": {
+                "title": "SupplierSchema",
+                "required": [
+                    "id",
+                    "name",
+                    "active_flag",
+                    "project_id"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "title": "Id",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "title": "Name",
+                        "type": "string"
+                    },
+                    "active_flag": {
+                        "title": "Active Flag",
+                        "type": "boolean"
+                    },
+                    "project_id": {
+                        "title": "Project Id",
+                        "type": "integer"
+                    }
+                }
+            },
+            "UserReadSchema": {
+                "title": "UserReadSchema",
+                "required": [
+                    "id",
+                    "name",
+                    "username",
+                    "active_flag"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "title": "Id",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "title": "Name",
+                        "type": "string"
+                    },
+                    "username": {
+                        "title": "Username",
+                        "type": "string"
+                    },
+                    "active_flag": {
+                        "title": "Active Flag",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "ValidationError": {
+                "title": "ValidationError",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "loc": {
+                        "title": "Location",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "msg": {
+                        "title": "Message",
+                        "type": "string"
+                    },
+                    "type": {
+                        "title": "Error Type",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "Azure_AD_PKCE_Single_Tenant": {
+                "type": "oauth2",
+                "description": "`Leave client_secret blank`",
+                "flows": {
+                    "authorizationCode": {
+                        "scopes": {
+                            "api://58ec3837-a16f-4bd4-b6fa-2a1583bdd94f/Api.Scope": "Api.Scope"
+                        },
+                        "authorizationUrl": "https://login.microsoftonline.com/5de282a0-bea1-4791-9255-deacd0a46c0d/oauth2/v2.0/authorize",
+                        "tokenUrl": "https://login.microsoftonline.com/5de282a0-bea1-4791-9255-deacd0a46c0d/oauth2/v2.0/token"
+                    }
+                }
+            }
+        }
+    }
+}
